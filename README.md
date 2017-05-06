@@ -1,4 +1,4 @@
-# COS 341 Project 2
+# COS 341 Project 3
 
 ## Build and Run
 
@@ -8,5 +8,6 @@ An intermediate file will be created if the spl program compiles. It's called sp
 To run it spl.basic, type in: ./basic spl.basic 
 
 ## TODO: 
-src/codegen/Codegen.java is capable of converting everything except for functions. It however still needs to be tested 
-The pruning, i.e., project 3c  
+1. src/codegen/Codegen.java is capable of converting everything except for functions (so we need todo that). 
+2. Testing of Codegen.java
+2. The pruning, i.e., project 3c  
