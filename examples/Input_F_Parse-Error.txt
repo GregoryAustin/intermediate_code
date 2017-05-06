@@ -1,0 +1,6 @@
+for(i=0 ; i<j ; i=add(i,1)) { input(x) ; 
+                               s37 = "string" } ; 
+while(and(eq(y,z),(c>d))) { for(h=0 ; h<k ; h=add(h,1)) { input(y) ; proc procedure46 { input(x) ; halt } } ; 
+                            output(result) } ; 
+for(c=0 ; c<limit ; c=add(c,1)) { output(error) ; 
+                                  if(or((v26<v23),eq(v23,v29))) then { halt } }

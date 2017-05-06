@@ -1,0 +1,9 @@
+x0 = 12; yes
+z1 = 9; yes
+x2 = "hello"; yes
+x3; yes
+output(x2); yes
+
+proc x3 {
+z (z1) = add(x0,z1) (both wrong)
+}

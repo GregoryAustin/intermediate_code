@@ -1,0 +1,6 @@
+a = 1;
+output(a);
+a;
+output(a);
+
+proc a { a = "hello" }

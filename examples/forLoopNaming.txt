@@ -1,0 +1,9 @@
+
+
+i = 12;
+j = 0;
+k = 10;
+for(i=0 ; i<k ; i=add(i,1)) {
+j = add(j,i);
+i = sub(i,1)
+}

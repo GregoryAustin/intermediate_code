@@ -1,0 +1,39 @@
+
+input(n);
+one = 1;
+zero = 0;
+if ( (n < zero) ) then { out = "illegal"; output(out); halt } ;
+counter = 0;
+while( (n > zero) )
+     {
+      bool = 0;
+      eventest;
+      if( eq(bool,one) ) then { down } else { up };
+      counter = add(counter,one)
+     };
+output(counter);
+halt;
+
+proc up { three = 3; n = mult(n,three); n = add(n,one) }
+
+proc down { half = 0;
+            aux = n;
+            two = 2;
+            while ( (half < aux) )
+                  {
+                   new = mult(half,two);
+                   if( eq(aux,new) ) then { aux = half };
+                   half = add(half,one)
+                  };
+            n = aux
+          }
+
+proc eventest { zero = 0;
+                test = n;
+                while( not (test < zero) )
+                     {
+                      if ( eq(n,zero) ) then { bool = 1 };
+                      two = 2;
+                      test = sub(test,two)
+                     }
+              }

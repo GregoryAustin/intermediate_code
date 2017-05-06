@@ -1,0 +1,20 @@
+outer;
+output(b);
+
+proc outer {
+            input(c);
+            null = 0;
+            if ( (c < null) ) then { s="c is neg"; output(s); inner1 } else { s="c is pos"; output(s); inner2 };
+
+            proc inner1 {
+                         a = -1;
+                         s = "make pos";
+                         output(s);
+                         b = mult(a,c)
+                        }
+
+            proc inner2 {
+                         a = 1;
+                         b = mult(a,c)
+                        }
+           }

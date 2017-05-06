@@ -1,0 +1,5 @@
+x = 5;
+y = "str";
+z = x;
+output(x);
+halt

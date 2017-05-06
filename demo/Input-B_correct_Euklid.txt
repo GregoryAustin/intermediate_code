@@ -1,0 +1,12 @@
+input(a);
+input(b);
+null = 0;
+err = "illegal";
+if ( (a < null) ) then { output(err); halt };
+if ( (b < null) ) then { output(err); halt };
+if ( eq(a,null) ) then { a = b; b = null };
+while( not eq(b,null) )
+     {
+      if ( (a > b) ) then { a = sub(a,b) } else { b = sub(b,a) }
+     };
+output(a)

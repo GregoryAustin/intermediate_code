@@ -1,0 +1,7 @@
+input(choice);
+select;
+b = a;
+
+proc select { zero = 0;
+              if ( eq(choice,zero) ) then { a = "string" } else { a = 26 } 
+            }

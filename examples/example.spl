@@ -1,0 +1,20 @@
+input(x) ;
+num = x ;
+res = "unknown";
+str = "even" ;
+checknumber ;
+if( eq(res,str) )
+then { output(str) }
+else { output(res) };
+halt; 
+proc checknumber {
+n = num ;
+y = 1; 
+if ((n<0))
+then {n = mult(n,-1)};
+while ( (n>0) )
+{ n = sub(n,2)};
+if (eq(n,y))
+then { res = "even" }
+else { res = "odd"}
+}

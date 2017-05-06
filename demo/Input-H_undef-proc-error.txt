@@ -1,0 +1,5 @@
+input(i);
+square;
+output(i);
+
+proc wrongname { i = mult(i,i) }

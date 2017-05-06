@@ -1,0 +1,5 @@
+s = 1;
+output(s);
+s = "one";
+output(s);
+halt

@@ -1,0 +1,16 @@
+input(x);
+input(y);
+larger;
+smaller;
+output(s);
+halt;
+
+proc larger { null = 0;
+              z = sub(x,y);
+              if ( (z < null) ) then { s = "y larger" }
+            }
+
+proc smaller { null = 0;
+               z = sub(y,x);
+               if ( (z < null) ) then {s = "x larger" }
+             }

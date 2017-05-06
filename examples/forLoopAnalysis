@@ -1,0 +1,9 @@
+
+
+i0 = 12;
+j1 = 0;
+k2 = 10;
+for(i3=0 ; i(nothing)<k4(wrong) ; i(nothing)=add(i(nothing),1)) {
+j(nothing) = add(j(nothing),i(nothing));
+i(nothing) = sub(i(nothing),1)
+}

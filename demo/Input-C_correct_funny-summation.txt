@@ -1,0 +1,13 @@
+input(i);
+brandnew =add(i,i);
+newvar2 = sub(i,i);
+if ( eq(brandnew,newvar2) ) then { s = "i null"; output(s); halt };
+loop = i;
+for( i=0; i<loop; i=add(i,1) )
+   {
+    i = sub(i,1);
+    i = add(i,i)
+   };
+s = "result ";
+output(s);
+output(i)

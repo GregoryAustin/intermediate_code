@@ -1,0 +1,13 @@
+input(i);
+n = 0;
+s = "string";
+if ( (i>n) ) then { input(s) };
+if ( (i<n) ) then { input(t) };
+if ( eq(i,n) ) then { 
+                     while ( eq(i,n) ) 
+                           { s = "hahahaha";
+                             output(s) 
+                           } 
+                    };
+if ( (s>t) ) then { s = sub(s,t); output(s) } 
+             else { t = sub(t,s); output(t) }
