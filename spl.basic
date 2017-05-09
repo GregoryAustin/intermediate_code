@@ -1,0 +1,370 @@
+n0=1
+
+n1=0
+
+n2=n0
+
+n3=n1
+
+n4=n1
+
+n5=n1
+
+n6=1
+
+n7=2
+
+n8=3
+
+n9=4
+
+n10=5
+
+n11=6
+
+while n2 = n2
+input n12
+
+if (n12 = n8) then
+ n24=1000
+
+input n25
+
+while (n25<n24)
+s26$="not good"
+
+print s26$
+
+input n25
+
+
+wend
+
+n5=n25
+
+s26$="noted"
+
+print s26$
+
+
+
+if (n3 = n1) then
+ n3=n0
+
+s13$="welcome"
+
+print s13$
+
+ else
+ s13$="account"
+
+print s13$
+
+s13$="already"
+
+print s13$
+
+s13$="exists"
+
+print s13$
+
+
+end if
+
+
+
+
+end if
+
+if (n12 = n9) then
+ s28$="1st try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ s28$="2nd try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ s28$="3rd try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ print n7
+
+end
+
+
+end if
+
+
+end if
+
+
+end if
+
+
+
+if (n3 = n0 AND n4 = n1) then
+ n5=n1
+
+n3=n1
+
+s15$="good bye"
+
+print s15$
+
+end
+
+ else
+ print n7
+
+
+end if
+
+
+
+
+end if
+
+if (n12 = n6) then
+ s28$="1st try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ s28$="2nd try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ s28$="3rd try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ print n7
+
+end
+
+
+end if
+
+
+end if
+
+
+end if
+
+
+
+if (n3 = n0) then
+ print n4
+
+ else
+ print n7
+
+
+end if
+
+
+
+
+end if
+
+if (n12 = n10) then
+ s28$="1st try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ s28$="2nd try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ s28$="3rd try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ print n7
+
+end
+
+
+end if
+
+
+end if
+
+
+end if
+
+
+
+input n18
+
+if (n3 = n0 AND (n18>n1)) then
+ n4=n4+n18
+
+s19$="thanks"
+
+print s19$
+
+ else
+ print n7
+
+
+end if
+
+
+
+
+end if
+
+if (n12 = n11) then
+ s28$="1st try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ s28$="2nd try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ s28$="3rd try"
+
+print s28$
+
+input n29
+
+if ((n29>n1) AND n29 = n5) then
+ s28$="ok"
+
+print s28$
+
+ else
+ print n7
+
+end
+
+
+end if
+
+
+end if
+
+
+end if
+
+
+
+input n21
+
+if ((n21>n1) AND n3 = n0 AND not((n4<n21))) then
+ n4=n4-n21
+
+s22$="done"
+
+print s22$
+
+ else
+ print n7
+
+
+end if
+
+
+
+ else
+ print n7
+
+
+end if
+
+
+wend
+
+
+end

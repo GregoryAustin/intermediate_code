@@ -93,6 +93,7 @@ public class Analyzer {
                     symbolTable.exit();
                     symbolTable.bind(currentNode.getChild(1).snippet, currentNode.getChild(1));
                     symbolTable.pruneProcCall(currentNode.getChild(1).snippet, currentNode.getChild(1).getID());
+                    symbolTable.doDelProcs(currentNode.getChild(1).snippet, currentNode.getChild(1).getID());
                     return currentNode.type;
                 }
                 break;
@@ -172,9 +173,19 @@ public class Analyzer {
                 // S can possibly be "short string" or "integer"
                 // S -> u
                 // SVAR -> UserDefinedName
-                if (currentNode.type == 'n') {
+                if (currentNode.getChild(0).snippet.equals("code")) {
+                  System.out.println(currentNode.tokenNo);
+                }
+                if (currentNode.type == 'n') {System.out.println(currentNode.tokenNo + "n");
+                    TreeNode node1 = symbolTable.lookup(currentNode.getChild(0).snippet, 'n');
+                    currentNode.type = 'n';
                     currentNode.getChild(0).type = 'n';
-                    symbolTable.bind(currentNode.getChild(0).snippet, currentNode.getChild(0));
+
+                    if (node1 == null) {
+                        symbolTable.bind(currentNode.getChild(0).snippet, currentNode.getChild(0));
+                    } else {
+                        currentNode.getChild(0).setID(node1.getID());
+                    }
                     return currentNode.type;
                 } else if (currentNode.type == 's') {
                     currentNode.getChild(0).type = 's';
@@ -187,6 +198,7 @@ public class Analyzer {
                     }
                     else if (symbolTable.lookup(currentNode.getChild(0).snippet, 's') != null) {
                       node = symbolTable.lookup(currentNode.getChild(0).snippet, 's');
+
                     }
                     // else {
                     //   throw new ScopeError(currentNode.getChild(2).getChild(0).snippet + " has not been declared!");

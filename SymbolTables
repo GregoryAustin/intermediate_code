@@ -1,0 +1,47 @@
+===== Scope 1 =====
+mes - s13
+
+===== Scope 2 =====
+mes - s15
+
+===== Scope 3 =====
+
+===== Scope 4 =====
+i - n18
+mes - s19
+
+===== Scope 5 =====
+i - n21
+mes - s22
+
+===== Scope 6 =====
+kilo - n24
+mes - s26
+code - n25
+
+===== Scope 7 =====
+mes - s28
+code - n29
+
+===== Scope 0 =====
+create - p14
+create - n8
+error - n7
+in - p20
+withdr - n11
+depos - n10
+askpw - p30
+out - p23
+passwd - n5
+one - n0
+null - n1
+instruction - n12
+exists - n3
+amount - n4
+setpw - p27
+always - n2
+close - p16
+close - n9
+show - p17
+show - n6
+

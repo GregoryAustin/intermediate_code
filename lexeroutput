@@ -1,0 +1,601 @@
+0	user-defined name	one
+1	assignment operator	=
+2	integer	1
+3	grouping symbol	;
+4	user-defined name	null
+5	assignment operator	=
+6	integer	0
+7	grouping symbol	;
+8	user-defined name	always
+9	assignment operator	=
+10	user-defined name	one
+11	grouping symbol	;
+12	user-defined name	exists
+13	assignment operator	=
+14	user-defined name	null
+15	grouping symbol	;
+16	user-defined name	amount
+17	assignment operator	=
+18	user-defined name	null
+19	grouping symbol	;
+20	user-defined name	passwd
+21	assignment operator	=
+22	user-defined name	null
+23	grouping symbol	;
+24	user-defined name	show
+25	assignment operator	=
+26	integer	1
+27	grouping symbol	;
+28	user-defined name	error
+29	assignment operator	=
+30	integer	2
+31	grouping symbol	;
+32	user-defined name	create
+33	assignment operator	=
+34	integer	3
+35	grouping symbol	;
+36	user-defined name	close
+37	assignment operator	=
+38	integer	4
+39	grouping symbol	;
+40	user-defined name	depos
+41	assignment operator	=
+42	integer	5
+43	grouping symbol	;
+44	user-defined name	withdr
+45	assignment operator	=
+46	integer	6
+47	grouping symbol	;
+48	keyword	while
+49	grouping symbol	(
+50	keyword	eq
+51	grouping symbol	(
+52	user-defined name	always
+53	grouping symbol	,
+54	user-defined name	always
+55	grouping symbol	)
+56	grouping symbol	)
+57	grouping symbol	{
+58	keyword	input
+59	grouping symbol	(
+60	user-defined name	instruction
+61	grouping symbol	)
+62	grouping symbol	;
+63	keyword	if
+64	grouping symbol	(
+65	keyword	eq
+66	grouping symbol	(
+67	user-defined name	instruction
+68	grouping symbol	,
+69	user-defined name	create
+70	grouping symbol	)
+71	grouping symbol	)
+72	keyword	then
+73	grouping symbol	{
+74	user-defined name	setpw
+75	grouping symbol	;
+76	user-defined name	create
+77	grouping symbol	}
+78	grouping symbol	;
+79	keyword	if
+80	grouping symbol	(
+81	keyword	eq
+82	grouping symbol	(
+83	user-defined name	instruction
+84	grouping symbol	,
+85	user-defined name	close
+86	grouping symbol	)
+87	grouping symbol	)
+88	keyword	then
+89	grouping symbol	{
+90	user-defined name	askpw
+91	grouping symbol	;
+92	user-defined name	close
+93	grouping symbol	}
+94	grouping symbol	;
+95	keyword	if
+96	grouping symbol	(
+97	keyword	eq
+98	grouping symbol	(
+99	user-defined name	instruction
+100	grouping symbol	,
+101	user-defined name	show
+102	grouping symbol	)
+103	grouping symbol	)
+104	keyword	then
+105	grouping symbol	{
+106	user-defined name	askpw
+107	grouping symbol	;
+108	user-defined name	show
+109	grouping symbol	}
+110	grouping symbol	;
+111	keyword	if
+112	grouping symbol	(
+113	keyword	eq
+114	grouping symbol	(
+115	user-defined name	instruction
+116	grouping symbol	,
+117	user-defined name	depos
+118	grouping symbol	)
+119	grouping symbol	)
+120	keyword	then
+121	grouping symbol	{
+122	user-defined name	askpw
+123	grouping symbol	;
+124	user-defined name	in
+125	grouping symbol	}
+126	grouping symbol	;
+127	keyword	if
+128	grouping symbol	(
+129	keyword	eq
+130	grouping symbol	(
+131	user-defined name	instruction
+132	grouping symbol	,
+133	user-defined name	withdr
+134	grouping symbol	)
+135	grouping symbol	)
+136	keyword	then
+137	grouping symbol	{
+138	user-defined name	askpw
+139	grouping symbol	;
+140	user-defined name	out
+141	grouping symbol	}
+142	keyword	else
+143	grouping symbol	{
+144	keyword	output
+145	grouping symbol	(
+146	user-defined name	error
+147	grouping symbol	)
+148	grouping symbol	}
+149	grouping symbol	}
+150	grouping symbol	;
+151	keyword	proc
+152	user-defined name	create
+153	grouping symbol	{
+154	keyword	if
+155	grouping symbol	(
+156	keyword	eq
+157	grouping symbol	(
+158	user-defined name	exists
+159	grouping symbol	,
+160	user-defined name	null
+161	grouping symbol	)
+162	grouping symbol	)
+163	keyword	then
+164	grouping symbol	{
+165	user-defined name	exists
+166	assignment operator	=
+167	user-defined name	one
+168	grouping symbol	;
+169	user-defined name	mes
+170	assignment operator	=
+171	short string	"welcome"
+172	grouping symbol	;
+173	keyword	output
+174	grouping symbol	(
+175	user-defined name	mes
+176	grouping symbol	)
+177	grouping symbol	}
+178	keyword	else
+179	grouping symbol	{
+180	user-defined name	mes
+181	assignment operator	=
+182	short string	"account"
+183	grouping symbol	;
+184	keyword	output
+185	grouping symbol	(
+186	user-defined name	mes
+187	grouping symbol	)
+188	grouping symbol	;
+189	user-defined name	mes
+190	assignment operator	=
+191	short string	"already"
+192	grouping symbol	;
+193	keyword	output
+194	grouping symbol	(
+195	user-defined name	mes
+196	grouping symbol	)
+197	grouping symbol	;
+198	user-defined name	mes
+199	assignment operator	=
+200	short string	"exists"
+201	grouping symbol	;
+202	keyword	output
+203	grouping symbol	(
+204	user-defined name	mes
+205	grouping symbol	)
+206	grouping symbol	}
+207	grouping symbol	}
+208	keyword	proc
+209	user-defined name	close
+210	grouping symbol	{
+211	keyword	if
+212	grouping symbol	(
+213	keyword	and
+214	grouping symbol	(
+215	keyword	eq
+216	grouping symbol	(
+217	user-defined name	exists
+218	grouping symbol	,
+219	user-defined name	one
+220	grouping symbol	)
+221	grouping symbol	,
+222	keyword	eq
+223	grouping symbol	(
+224	user-defined name	amount
+225	grouping symbol	,
+226	user-defined name	null
+227	grouping symbol	)
+228	grouping symbol	)
+229	grouping symbol	)
+230	keyword	then
+231	grouping symbol	{
+232	user-defined name	passwd
+233	assignment operator	=
+234	user-defined name	null
+235	grouping symbol	;
+236	user-defined name	exists
+237	assignment operator	=
+238	user-defined name	null
+239	grouping symbol	;
+240	user-defined name	mes
+241	assignment operator	=
+242	short string	"good bye"
+243	grouping symbol	;
+244	keyword	output
+245	grouping symbol	(
+246	user-defined name	mes
+247	grouping symbol	)
+248	grouping symbol	;
+249	keyword	halt
+250	grouping symbol	}
+251	keyword	else
+252	grouping symbol	{
+253	keyword	output
+254	grouping symbol	(
+255	user-defined name	error
+256	grouping symbol	)
+257	grouping symbol	}
+258	grouping symbol	}
+259	keyword	proc
+260	user-defined name	show
+261	grouping symbol	{
+262	keyword	if
+263	grouping symbol	(
+264	keyword	eq
+265	grouping symbol	(
+266	user-defined name	exists
+267	grouping symbol	,
+268	user-defined name	one
+269	grouping symbol	)
+270	grouping symbol	)
+271	keyword	then
+272	grouping symbol	{
+273	keyword	output
+274	grouping symbol	(
+275	user-defined name	amount
+276	grouping symbol	)
+277	grouping symbol	}
+278	keyword	else
+279	grouping symbol	{
+280	keyword	output
+281	grouping symbol	(
+282	user-defined name	error
+283	grouping symbol	)
+284	grouping symbol	}
+285	grouping symbol	}
+286	keyword	proc
+287	user-defined name	in
+288	grouping symbol	{
+289	keyword	input
+290	grouping symbol	(
+291	user-defined name	i
+292	grouping symbol	)
+293	grouping symbol	;
+294	keyword	if
+295	grouping symbol	(
+296	keyword	and
+297	grouping symbol	(
+298	keyword	eq
+299	grouping symbol	(
+300	user-defined name	exists
+301	grouping symbol	,
+302	user-defined name	one
+303	grouping symbol	)
+304	grouping symbol	,
+305	grouping symbol	(
+306	user-defined name	i
+307	comparison symbol	>
+308	user-defined name	null
+309	grouping symbol	)
+310	grouping symbol	)
+311	grouping symbol	)
+312	keyword	then
+313	grouping symbol	{
+314	user-defined name	amount
+315	assignment operator	=
+316	keyword	add
+317	grouping symbol	(
+318	user-defined name	amount
+319	grouping symbol	,
+320	user-defined name	i
+321	grouping symbol	)
+322	grouping symbol	;
+323	user-defined name	mes
+324	assignment operator	=
+325	short string	"thanks"
+326	grouping symbol	;
+327	keyword	output
+328	grouping symbol	(
+329	user-defined name	mes
+330	grouping symbol	)
+331	grouping symbol	}
+332	keyword	else
+333	grouping symbol	{
+334	keyword	output
+335	grouping symbol	(
+336	user-defined name	error
+337	grouping symbol	)
+338	grouping symbol	}
+339	grouping symbol	}
+340	keyword	proc
+341	user-defined name	out
+342	grouping symbol	{
+343	keyword	input
+344	grouping symbol	(
+345	user-defined name	i
+346	grouping symbol	)
+347	grouping symbol	;
+348	keyword	if
+349	grouping symbol	(
+350	keyword	and
+351	grouping symbol	(
+352	grouping symbol	(
+353	user-defined name	i
+354	comparison symbol	>
+355	user-defined name	null
+356	grouping symbol	)
+357	grouping symbol	,
+358	keyword	and
+359	grouping symbol	(
+360	keyword	eq
+361	grouping symbol	(
+362	user-defined name	exists
+363	grouping symbol	,
+364	user-defined name	one
+365	grouping symbol	)
+366	grouping symbol	,
+367	keyword	not
+368	grouping symbol	(
+369	user-defined name	amount
+370	comparison symbol	<
+371	user-defined name	i
+372	grouping symbol	)
+373	grouping symbol	)
+374	grouping symbol	)
+375	grouping symbol	)
+376	keyword	then
+377	grouping symbol	{
+378	user-defined name	amount
+379	assignment operator	=
+380	keyword	sub
+381	grouping symbol	(
+382	user-defined name	amount
+383	grouping symbol	,
+384	user-defined name	i
+385	grouping symbol	)
+386	grouping symbol	;
+387	user-defined name	mes
+388	assignment operator	=
+389	short string	"done"
+390	grouping symbol	;
+391	keyword	output
+392	grouping symbol	(
+393	user-defined name	mes
+394	grouping symbol	)
+395	grouping symbol	}
+396	keyword	else
+397	grouping symbol	{
+398	keyword	output
+399	grouping symbol	(
+400	user-defined name	error
+401	grouping symbol	)
+402	grouping symbol	}
+403	grouping symbol	}
+404	keyword	proc
+405	user-defined name	setpw
+406	grouping symbol	{
+407	user-defined name	kilo
+408	assignment operator	=
+409	integer	1000
+410	grouping symbol	;
+411	keyword	input
+412	grouping symbol	(
+413	user-defined name	code
+414	grouping symbol	)
+415	grouping symbol	;
+416	keyword	while
+417	grouping symbol	(
+418	grouping symbol	(
+419	user-defined name	code
+420	comparison symbol	<
+421	user-defined name	kilo
+422	grouping symbol	)
+423	grouping symbol	)
+424	grouping symbol	{
+425	user-defined name	mes
+426	assignment operator	=
+427	short string	"not good"
+428	grouping symbol	;
+429	keyword	output
+430	grouping symbol	(
+431	user-defined name	mes
+432	grouping symbol	)
+433	grouping symbol	;
+434	keyword	input
+435	grouping symbol	(
+436	user-defined name	code
+437	grouping symbol	)
+438	grouping symbol	}
+439	grouping symbol	;
+440	user-defined name	passwd
+441	assignment operator	=
+442	user-defined name	code
+443	grouping symbol	;
+444	user-defined name	mes
+445	assignment operator	=
+446	short string	"noted"
+447	grouping symbol	;
+448	keyword	output
+449	grouping symbol	(
+450	user-defined name	mes
+451	grouping symbol	)
+452	grouping symbol	}
+453	keyword	proc
+454	user-defined name	askpw
+455	grouping symbol	{
+456	user-defined name	mes
+457	assignment operator	=
+458	short string	"1st try"
+459	grouping symbol	;
+460	keyword	output
+461	grouping symbol	(
+462	user-defined name	mes
+463	grouping symbol	)
+464	grouping symbol	;
+465	keyword	input
+466	grouping symbol	(
+467	user-defined name	code
+468	grouping symbol	)
+469	grouping symbol	;
+470	keyword	if
+471	grouping symbol	(
+472	keyword	and
+473	grouping symbol	(
+474	grouping symbol	(
+475	user-defined name	code
+476	comparison symbol	>
+477	user-defined name	null
+478	grouping symbol	)
+479	grouping symbol	,
+480	keyword	eq
+481	grouping symbol	(
+482	user-defined name	code
+483	grouping symbol	,
+484	user-defined name	passwd
+485	grouping symbol	)
+486	grouping symbol	)
+487	grouping symbol	)
+488	keyword	then
+489	grouping symbol	{
+490	user-defined name	mes
+491	assignment operator	=
+492	short string	"ok"
+493	grouping symbol	;
+494	keyword	output
+495	grouping symbol	(
+496	user-defined name	mes
+497	grouping symbol	)
+498	grouping symbol	}
+499	keyword	else
+500	grouping symbol	{
+501	user-defined name	mes
+502	assignment operator	=
+503	short string	"2nd try"
+504	grouping symbol	;
+505	keyword	output
+506	grouping symbol	(
+507	user-defined name	mes
+508	grouping symbol	)
+509	grouping symbol	;
+510	keyword	input
+511	grouping symbol	(
+512	user-defined name	code
+513	grouping symbol	)
+514	grouping symbol	;
+515	keyword	if
+516	grouping symbol	(
+517	keyword	and
+518	grouping symbol	(
+519	grouping symbol	(
+520	user-defined name	code
+521	comparison symbol	>
+522	user-defined name	null
+523	grouping symbol	)
+524	grouping symbol	,
+525	keyword	eq
+526	grouping symbol	(
+527	user-defined name	code
+528	grouping symbol	,
+529	user-defined name	passwd
+530	grouping symbol	)
+531	grouping symbol	)
+532	grouping symbol	)
+533	keyword	then
+534	grouping symbol	{
+535	user-defined name	mes
+536	assignment operator	=
+537	short string	"ok"
+538	grouping symbol	;
+539	keyword	output
+540	grouping symbol	(
+541	user-defined name	mes
+542	grouping symbol	)
+543	grouping symbol	}
+544	keyword	else
+545	grouping symbol	{
+546	user-defined name	mes
+547	assignment operator	=
+548	short string	"3rd try"
+549	grouping symbol	;
+550	keyword	output
+551	grouping symbol	(
+552	user-defined name	mes
+553	grouping symbol	)
+554	grouping symbol	;
+555	keyword	input
+556	grouping symbol	(
+557	user-defined name	code
+558	grouping symbol	)
+559	grouping symbol	;
+560	keyword	if
+561	grouping symbol	(
+562	keyword	and
+563	grouping symbol	(
+564	grouping symbol	(
+565	user-defined name	code
+566	comparison symbol	>
+567	user-defined name	null
+568	grouping symbol	)
+569	grouping symbol	,
+570	keyword	eq
+571	grouping symbol	(
+572	user-defined name	code
+573	grouping symbol	,
+574	user-defined name	passwd
+575	grouping symbol	)
+576	grouping symbol	)
+577	grouping symbol	)
+578	keyword	then
+579	grouping symbol	{
+580	user-defined name	mes
+581	assignment operator	=
+582	short string	"ok"
+583	grouping symbol	;
+584	keyword	output
+585	grouping symbol	(
+586	user-defined name	mes
+587	grouping symbol	)
+588	grouping symbol	}
+589	keyword	else
+590	grouping symbol	{
+591	keyword	output
+592	grouping symbol	(
+593	user-defined name	error
+594	grouping symbol	)
+595	grouping symbol	;
+596	keyword	halt
+597	grouping symbol	}
+598	grouping symbol	}
+599	grouping symbol	}
+600	grouping symbol	}

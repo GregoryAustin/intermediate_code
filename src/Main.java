@@ -43,6 +43,7 @@ public class Main {
         // SEMANTIC ANALYSIS
         Analyzer analyzer = new Analyzer(prsr.getRoot());
         analyzer.checkTypeAndScope();
+        
         //System.out.println(analyzer);
         fw = new FileWriter(ANALYZER_FILE);
         fw.write(analyzer.toString());
@@ -58,7 +59,8 @@ public class Main {
         fw = new FileWriter(BASIC_FILE);
         fw.write(cgen.toString());
         fw.close();
-        System.out.println("Basic intermediate code added to file spl.basic")
+        System.out.println("Basic intermediate code added to file spl.basic");
+        System.out.println(cgen.procIDs);
 
     }
 }

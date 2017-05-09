@@ -37,6 +37,7 @@ public class Table {
     public int currentScope;
     public static ArrayList<Scope> scopes = new ArrayList<>();
     public static ArrayList<TreeNode> procCalls = new ArrayList<>();
+    public LinkedList<TreeNode> delProcs = new LinkedList<>();
     private final int SIZE = 256;
     private Bucket table[];
 
@@ -144,8 +145,12 @@ public class Table {
 
     public void addProcCall(TreeNode proc) {
         for (TreeNode procCall : procCalls) {
-            if (procCall.snippet.equals(proc.snippet)) return;
+            if (procCall.snippet.equals(proc.snippet)){
+              delProcs.add(proc);
+              return;
+            }
         }
+
         procCalls.add(proc);
     }
 
@@ -163,6 +168,16 @@ public class Table {
                 return;
             }
         }
+    }
+
+    public void doDelProcs(String procName, int nodeID) {
+      for (int i = 0; i < delProcs.size(); ++i) {
+        if (delProcs.get(i).snippet.equals(procName)) {
+          delProcs.get(i).setID(nodeID);
+          delProcs.remove(i);
+          i--;
+        }
+      }
     }
 
     public Bucket[] getTable() {

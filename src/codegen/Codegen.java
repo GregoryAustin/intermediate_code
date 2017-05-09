@@ -1,10 +1,20 @@
+import java.util.*;
 
 public class Codegen {
   private TreeNode root;
-  String basic;
+  private String basic;
+  private boolean getProcs;
+  public LinkedList<Integer> procIDs = new LinkedList<Integer>();
+  LinkedList<TreeNode> procCode = new LinkedList<TreeNode>();
+
   public Codegen (TreeNode node)  {
+      getProcs = true;
+
      this.root = node;
      basic = "";
+     generateCode();
+     basic = "";
+     getProcs = false;
   }
   //TODO: functions:
 
@@ -15,6 +25,7 @@ public class Codegen {
   public String toString() {
     return basic;
   }
+
 
   private void genCode(TreeNode currentNode) {
     switch(currentNode.tokenClass) {
@@ -42,11 +53,14 @@ public class Codegen {
         }
         break;
       case "R"://TODO: make proc defs work properly
-        basic += "proc " + currentNode.getChild(1).type + currentNode.getChild(1).getID() + "\n";
-        genCode(currentNode.getChild(2));
-        basic += "\nend " + currentNode.getChild(1).type + currentNode.getChild(1).getID() ;
+        if (getProcs) {
+          procIDs.add(currentNode.getChild(1).getID());
+          procCode.add(currentNode.getChild(2));
 
+          genCode(currentNode.getChild(2));
+        }
         break;
+
       case "C":
       case "I"://DONE
         for (int x = 0; x < currentNode.childrenSize(); ++x) {
@@ -67,7 +81,13 @@ public class Codegen {
 
         break;
       case "Y": //TODO: make proc defs work properly
-        basic += "GOTO " + currentNode.getChild(0).type + currentNode.getChild(0).getID();
+        if (getProcs) {
+          basic += "GOTO " + currentNode.getChild(0).type + currentNode.getChild(0).getID();
+        } else {
+          //System.out.println("Getting id " + currentNode + " \nIN " + procIDs);
+          genCode(procCode.get(procIDs.indexOf(currentNode.getChild(0).getID())));
+        }
+
         break;
       case "V": //DONE
         genCode(currentNode.getChild(0));

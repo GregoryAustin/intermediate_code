@@ -1,0 +1,74 @@
+one  = 1;
+null = 0;
+
+always = one;
+exists = null;
+amount = null;
+passwd = null;
+
+show   = 1;
+error  = 2;
+create = 3;
+close  = 4;
+depos  = 5;
+withdr = 6;
+
+while ( eq(always,always) ) 
+      {
+       input(instruction);
+       if ( eq(instruction,create)) then { setpw; create };
+       if ( eq(instruction,close) ) then { askpw; close };
+       if ( eq(instruction,show)  ) then { askpw; show };
+       if ( eq(instruction,depos) ) then { askpw; in  };
+       if ( eq(instruction,withdr)) then { askpw; out} else { output(error) } 
+      };
+
+proc create { if ( eq(exists,null) ) 
+                     then { exists=one; mes="welcome"; output(mes) }
+                     else { mes="account"; output(mes);
+                            mes="already"; output(mes);
+                            mes="exists" ; output(mes)} }
+
+proc close { if ( and(eq(exists,one), eq(amount,null)) ) 
+                     then { passwd = null; exists = null; mes="good bye"; output(mes); halt }
+                     else { output(error) } }
+
+proc show { if ( eq(exists,one) ) then { output(amount) } else { output(error) } }
+
+proc in { input(i);
+          if ( and(eq(exists,one), (i>null))) 
+                  then { amount=add(amount,i); mes="thanks"; output(mes) }
+                  else { output(error) } }
+
+proc out { input(i);
+           if ( and((i>null), and(eq(exists,one),not(amount<i)))) 
+                   then { amount=sub(amount,i); mes="done"; output(mes) }
+                   else { output(error) } }
+
+proc setpw { kilo = 1000;
+             input(code);
+             while ( (code < kilo) )
+                   {
+                    mes = "not good"; output(mes); input(code)
+                   };
+             passwd = code;
+             mes = "noted";
+             output(mes) }
+
+proc askpw {
+            mes="1st try";
+            output(mes);
+            input(code);
+            if (and((code>null),eq(code,passwd))) 
+                    then { mes = "ok"; output(mes) } 
+                    else { mes="2nd try";
+                           output(mes);
+                           input(code);
+                           if (and((code>null),eq(code,passwd))) 
+                               then { mes = "ok"; output(mes) } 
+                               else { mes="3rd try";
+                                      output(mes);
+                                      input(code);
+                                      if (and((code>null),eq(code,passwd))) 
+                                          then { mes = "ok"; output(mes) } 
+                                          else { output(error); halt } } } }
