@@ -1,0 +1,5 @@
+x1 = 10;
+y=0;
+z=2;
+message = "loopif";
+while (not eq(x1,y)) {w=z; output(y); y = add(y,1)}
