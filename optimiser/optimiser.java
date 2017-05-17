@@ -22,6 +22,7 @@ class optimiser {
 		} catch (Exception e) {}
 		
 		whileLoops(0);
+		variableChecks();
 
 		for (String line : lines) {
 			System.out.println(line);
@@ -66,6 +67,18 @@ class optimiser {
 			}
 			//System.out.println("EXITED");
 			//i++;
+		}
+	}
+
+	public void variableChecks() {
+		System.out.println("Entering while variable optimisation....");
+		//int count = start;
+
+		for (int i = start; i < lines.size(); ++i) {
+			String line = lines.get(i);
+			if (line.matchs("")) {
+				
+			}
 		}
 	}
 

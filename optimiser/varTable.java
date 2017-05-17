@@ -13,5 +13,7 @@ class varTable {
 	public addExpression(String line) {
 		String variable = line.split("=")[0];
 		String expressionOfLine = line.split("=")[1];
+
+		System.out.println();
 	}
 }
