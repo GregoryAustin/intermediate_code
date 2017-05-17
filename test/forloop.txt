@@ -1,5 +1,5 @@
 x1 = 10;
 y=0;
-z=2;
+z= 0;
 message = "loopif";
-while (not eq(x1,y)) {w=z; output(y); y = add(y,1)}
+for (i = 0; i < x1; i = add(i,1)) {output(message)}
